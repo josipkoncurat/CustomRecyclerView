@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddEditElementActivity"
+    android:padding="10dp">
+    
+    <EditText
+        android:id="@+id/edit_text_naziv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="Naziv"/>
+
+    <Button
+        android:id="@+id/btn_pocetak"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+        android:hint="Odaberi Pocetak"/>
+
+    <Button
+        android:id="@+id/btn_kraj"
+        android:layout_width="match_parent"
+        style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+        android:layout_height="wrap_content"
+        android:hint="Odaberi Kraj"/>
+
+    <EditText
+        android:id="@+id/edit_text_tag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Tag"/>
+
+</LinearLayout>
