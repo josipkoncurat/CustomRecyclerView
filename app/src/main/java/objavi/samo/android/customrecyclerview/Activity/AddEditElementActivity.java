@@ -71,12 +71,9 @@ public class AddEditElementActivity extends AppCompatActivity implements DatePic
 
             }
         });
-
-
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);
 
         Intent intent = getIntent();
-
         if (intent.hasExtra(EXTRA_ID)) {
             setTitle("Edit Element");
             editTextNaziv.setText(intent.getStringExtra(EXTRA_NAZIV));
@@ -90,6 +87,7 @@ public class AddEditElementActivity extends AppCompatActivity implements DatePic
             setTitle("Add Element");
         }
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -130,16 +128,6 @@ public class AddEditElementActivity extends AppCompatActivity implements DatePic
         setResult(RESULT_OK, data);
         finish();
     }
-    private void showDatePickerDialog(){
-
-        DatePickerDialog datePickerDialog = new DatePickerDialog(
-                this,
-                this,
-                Calendar.getInstance().get(Calendar.YEAR),
-                Calendar.getInstance().get(Calendar.MONTH),
-                Calendar.getInstance().get(Calendar.DAY_OF_MONTH));
-        datePickerDialog.show();
-    }
 
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
@@ -156,5 +144,15 @@ public class AddEditElementActivity extends AppCompatActivity implements DatePic
             btnKraj.setText(Tools.getFormattedDateSimple(date_ship_millis));
             kraj = date_ship_millis;
         }
+    }
+    private void showDatePickerDialog(){
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(
+                this,
+                this,
+                Calendar.getInstance().get(Calendar.YEAR),
+                Calendar.getInstance().get(Calendar.MONTH),
+                Calendar.getInstance().get(Calendar.DAY_OF_MONTH));
+        datePickerDialog.show();
     }
 }

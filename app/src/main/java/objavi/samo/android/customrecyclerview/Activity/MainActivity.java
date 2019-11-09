@@ -27,8 +27,6 @@ public class MainActivity extends AppCompatActivity {
     public static final int EDIT_ELEMENT_REQUEST = 2;
 
     private ElementViewModel elementViewModel;
-
-    private View parent_view;
     private Button btn_add;
 
     private RecyclerView recyclerView;
@@ -39,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        parent_view = findViewById(android.R.id.content);
 
         initComponent();
 

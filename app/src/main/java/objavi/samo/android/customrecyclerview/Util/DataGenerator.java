@@ -8,7 +8,7 @@ import objavi.samo.android.customrecyclerview.Model.Element;
 public class DataGenerator {
 
 
-    // util method for inserting 24 empty elements
+    // util method for inserting elements
     public static List<Element> getElementData() {
         List<Element> items = new ArrayList<>();
 

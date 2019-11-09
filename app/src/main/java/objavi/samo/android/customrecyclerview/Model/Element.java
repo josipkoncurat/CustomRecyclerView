@@ -26,7 +26,6 @@ public class Element {
         this.naziv = naziv;
     }
 
-
     public String getNaziv() {
         return naziv;
     }

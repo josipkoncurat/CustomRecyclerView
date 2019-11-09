@@ -97,9 +97,6 @@ public class CustomElementAdapter extends RecyclerView.Adapter<RecyclerView.View
 
         return size.y;
     }
-
-
-
     @SuppressLint("ClickableViewAccessibility")
     @Override
     public void onBindViewHolder(@NonNull final RecyclerView.ViewHolder holder, int position) {
@@ -132,7 +129,6 @@ public class CustomElementAdapter extends RecyclerView.Adapter<RecyclerView.View
             });
         }
     }
-
     @Override
     public int getItemCount() {
         return items.size();
