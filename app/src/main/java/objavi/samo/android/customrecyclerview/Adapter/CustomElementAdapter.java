@@ -1,13 +1,10 @@
-package objavi.samo.android.customrecyclerview;
+package objavi.samo.android.customrecyclerview.Adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.support.annotation.NonNull;
-import android.support.v4.view.MotionEventCompat;
-import android.support.v7.recyclerview.extensions.ListAdapter;
-import android.support.v7.util.DiffUtil;
 import android.support.v7.widget.RecyclerView;
 import android.view.Display;
 import android.view.LayoutInflater;
@@ -22,8 +19,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import objavi.samo.android.customrecyclerview.Model.Element;
+import objavi.samo.android.customrecyclerview.R;
+import objavi.samo.android.customrecyclerview.Util.Tools;
+
 public class CustomElementAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
-        implements DragItemTouchHelper.MoveHelperAdapter  {
+        implements DragItemTouchHelper.MoveHelperAdapter {
 
     private final int limit = 9;
     private List<Element> items = new ArrayList<>();
@@ -68,17 +69,14 @@ public class CustomElementAdapter extends RecyclerView.Adapter<RecyclerView.View
 
             lyt_parent = v.findViewById(R.id.lyt_parent);
             dragIcon = v.findViewById(R.id.drag);
-
         }
-
         @Override
         public void onItemSelected() {
-            //itemView.setBackgroundColor(Color.LTGRAY);
+            itemView.setBackgroundColor(Color.LTGRAY);
         };
-
         @Override
         public void onItemClear() {
-            itemView.setBackgroundColor(0);
+            itemView.setBackgroundColor(Color.WHITE);
         }
     }
     @NonNull

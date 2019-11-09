@@ -1,4 +1,4 @@
-package objavi.samo.android.customrecyclerview;
+package objavi.samo.android.customrecyclerview.Adapter;
 
 import android.graphics.Canvas;
 import android.support.v7.widget.GridLayoutManager;

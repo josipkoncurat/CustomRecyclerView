@@ -1,4 +1,4 @@
-package objavi.samo.android.customrecyclerview;
+package objavi.samo.android.customrecyclerview.Persistence;
 
 import android.arch.persistence.db.SupportSQLiteDatabase;
 import android.arch.persistence.room.Database;
@@ -9,6 +9,9 @@ import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 
 import java.util.List;
+
+import objavi.samo.android.customrecyclerview.Model.Element;
+import objavi.samo.android.customrecyclerview.Util.DataGenerator;
 
 @Database(entities = {Element.class}, version = 1)
 public abstract class ElementDatabase extends RoomDatabase {

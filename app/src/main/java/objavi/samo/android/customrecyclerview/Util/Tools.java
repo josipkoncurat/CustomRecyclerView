@@ -1,4 +1,4 @@
-package objavi.samo.android.customrecyclerview;
+package objavi.samo.android.customrecyclerview.Util;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

@@ -1,4 +1,4 @@
-package objavi.samo.android.customrecyclerview;
+package objavi.samo.android.customrecyclerview.Activity;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
@@ -14,6 +14,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.Calendar;
+
+import objavi.samo.android.customrecyclerview.R;
+import objavi.samo.android.customrecyclerview.Util.Tools;
 
 public class AddEditElementActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 

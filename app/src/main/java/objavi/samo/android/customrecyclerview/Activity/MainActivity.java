@@ -1,4 +1,4 @@
-package objavi.samo.android.customrecyclerview;
+package objavi.samo.android.customrecyclerview.Activity;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
@@ -14,6 +14,12 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import java.util.List;
+
+import objavi.samo.android.customrecyclerview.Adapter.CustomElementAdapter;
+import objavi.samo.android.customrecyclerview.Adapter.DragItemTouchHelper;
+import objavi.samo.android.customrecyclerview.Model.Element;
+import objavi.samo.android.customrecyclerview.Persistence.ElementViewModel;
+import objavi.samo.android.customrecyclerview.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -67,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(Element obj) {
                 Intent intent = new Intent(MainActivity.this, AddEditElementActivity.class);
+
                 intent.putExtra(AddEditElementActivity.EXTRA_ID, obj.getId());
                 intent.putExtra(AddEditElementActivity.EXTRA_NAZIV, obj.getNaziv());
                 intent.putExtra(AddEditElementActivity.EXTRA_POCETAK, obj.getPocetak());
@@ -133,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
             String tag = data.getStringExtra(AddEditElementActivity.EXTRA_TAG);
             Element element = new Element(naziv, pocetak, kraj, tag);
             element.setId(id);
-            elementViewModel.update(element);
+            elementViewModel.update(element); //updating elements in the database
             Toast.makeText(this, "Element updated", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this, "Element not saved", Toast.LENGTH_SHORT).show();

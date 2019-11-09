@@ -1,10 +1,12 @@
-package objavi.samo.android.customrecyclerview;
+package objavi.samo.android.customrecyclerview.Persistence;
 
 import android.app.Application;
 import android.arch.lifecycle.LiveData;
 import android.os.AsyncTask;
 
 import java.util.List;
+
+import objavi.samo.android.customrecyclerview.Model.Element;
 
 public class ElementRepository {
 

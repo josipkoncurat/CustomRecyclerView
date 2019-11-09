@@ -1,7 +1,9 @@
-package objavi.samo.android.customrecyclerview;
+package objavi.samo.android.customrecyclerview.Util;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import objavi.samo.android.customrecyclerview.Model.Element;
 
 public class DataGenerator {
 
