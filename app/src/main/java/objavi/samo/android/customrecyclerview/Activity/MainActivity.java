@@ -118,10 +118,14 @@ public class MainActivity extends AppCompatActivity {
 
         if(requestCode == ADD_ELEMENT_REQUEST && resultCode == RESULT_OK){
             String naziv = data.getStringExtra(AddEditElementActivity.EXTRA_NAZIV);
-            long pocetak = data.getLongExtra(AddEditElementActivity.EXTRA_POCETAK, 0);
-            long kraj = data.getLongExtra(AddEditElementActivity.EXTRA_KRAJ, 0);
+            long pocetak = data.getLongExtra(AddEditElementActivity.EXTRA_POCETAK, -2);
+            long kraj = data.getLongExtra(AddEditElementActivity.EXTRA_KRAJ, -2);
             String tag = data.getStringExtra(AddEditElementActivity.EXTRA_TAG);
 
+            if(pocetak == -2 || kraj == -2) {
+                Toast.makeText(this, "Element can't be inserted", Toast.LENGTH_SHORT).show();
+                return;
+            }
 
             Element element = new Element(naziv, pocetak, kraj, tag);
             elementViewModel.insert(element); //inserting element into the database
@@ -130,14 +134,16 @@ public class MainActivity extends AppCompatActivity {
         }else if (requestCode == EDIT_ELEMENT_REQUEST && resultCode == RESULT_OK){
             int id = data.getIntExtra(AddEditElementActivity.EXTRA_ID, -1);
             
-            if(id == -1) {
+
+            String naziv = data.getStringExtra(AddEditElementActivity.EXTRA_NAZIV);
+            long pocetak = data.getLongExtra(AddEditElementActivity.EXTRA_POCETAK, -2);
+            long kraj = data.getLongExtra(AddEditElementActivity.EXTRA_KRAJ, -2);
+            String tag = data.getStringExtra(AddEditElementActivity.EXTRA_TAG);
+
+            if(id == -1 || pocetak == -2 || kraj == -2) {
                 Toast.makeText(this, "Element can't be updated", Toast.LENGTH_SHORT).show();
                 return;
             }
-            String naziv = data.getStringExtra(AddEditElementActivity.EXTRA_NAZIV);
-            long pocetak = data.getLongExtra(AddEditElementActivity.EXTRA_POCETAK, 0);
-            long kraj = data.getLongExtra(AddEditElementActivity.EXTRA_KRAJ, 0);
-            String tag = data.getStringExtra(AddEditElementActivity.EXTRA_TAG);
             Element element = new Element(naziv, pocetak, kraj, tag);
             element.setId(id);
             elementViewModel.update(element); //updating elements in the database

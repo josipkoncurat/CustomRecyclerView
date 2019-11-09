@@ -80,10 +80,11 @@ public class AddEditElementActivity extends AppCompatActivity implements DatePic
         if (intent.hasExtra(EXTRA_ID)) {
             setTitle("Edit Element");
             editTextNaziv.setText(intent.getStringExtra(EXTRA_NAZIV));
-            btnPocetak.setText(Tools.getFormattedDateSimple(intent.getLongExtra(EXTRA_POCETAK,0)));
-            pocetak = intent.getLongExtra(EXTRA_POCETAK,0);
-            kraj = intent.getLongExtra(EXTRA_KRAJ,0);
-            btnKraj.setText(Tools.getFormattedDateSimple(intent.getLongExtra(EXTRA_KRAJ,0)));
+            btnPocetak.setText(Tools.getFormattedDateSimple(intent.getLongExtra(EXTRA_POCETAK,-2)));
+            pocetak = intent.getLongExtra(EXTRA_POCETAK,-2);
+            kraj = intent.getLongExtra(EXTRA_KRAJ,-2);
+            btnKraj.setText(Tools.getFormattedDateSimple(intent.getLongExtra(EXTRA_KRAJ,-2)));
+            btnKraj.setText(Tools.getFormattedDateSimple(intent.getLongExtra(EXTRA_KRAJ,-2)));
             editTextTag.setText(intent.getStringExtra(EXTRA_TAG));
         } else {
             setTitle("Add Element");
@@ -112,7 +113,7 @@ public class AddEditElementActivity extends AppCompatActivity implements DatePic
         naziv = editTextNaziv.getText().toString();
         tag = editTextTag.getText().toString();
 
-        if (naziv.trim().isEmpty() || pocetak == 0 || kraj == 0 || tag.trim().isEmpty()){
+        if (naziv.trim().isEmpty() || pocetak == -2 || kraj == -2 || tag.trim().isEmpty()){
             Toast.makeText(this, "Please insert the fields", Toast.LENGTH_SHORT).show();
             return;
         }
